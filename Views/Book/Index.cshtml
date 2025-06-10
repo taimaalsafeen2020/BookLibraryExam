@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<BookLibraryExam.Models.Book>
 
 @{
-    ViewData["Title"] = "قائمة الكتب";
+    ViewData["Title"] = "menue book";
 }
 
-<h1>قائمة الكتب</h1>
+<h1>menue book</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-primary">إضافة كتاب جديد</a>
+    <a asp-action="Create" class="btn btn-primary">Add new book</a>
 </p>
 
 <table class="table table-striped">
@@ -17,7 +17,7 @@
             <th>@Html.DisplayNameFor(model => model.First().Author)</th>
             <th>@Html.DisplayNameFor(model => model.First().ISBN)</th>
             <th>@Html.DisplayNameFor(model => model.First().PublicationYear)</th>
-            <th>إجراءات</th>
+            <th>procedures</th>
         </tr>
     </thead>
     <tbody>
@@ -29,9 +29,9 @@
                 <td>@book.ISBN</td>
                 <td>@book.PublicationYear</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@book.Id" class="btn btn-warning btn-sm">تعديل</a>
-                    <form asp-action="Delete" asp-route-id="@book.Id" method="post" style="display:inline" onsubmit="return confirm('هل أنت متأكد من حذف الكتاب؟');">
-                        <button type="submit" class="btn btn-danger btn-sm">حذف</button>
+                    <a asp-action="Edit" asp-route-id="@book.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <form asp-action="Delete" asp-route-id="@book.Id" method="post" style="display:inline" onsubmit="return confirm('Are you sure you want to delete the book؟');">
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                     </form>
                 </td>
             </tr>

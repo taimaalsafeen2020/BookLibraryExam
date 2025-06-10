@@ -1,10 +1,10 @@
 ﻿@model BookLibraryExam.Models.Book
 
 @{
-    ViewData["Title"] = "إضافة كتاب جديد";
+    ViewData["Title"] = "Add new book";
 }
 
-<h2>إضافة كتاب جديد</h2>
+<h2>Add new book</h2>
 
 <form asp-action="Create" method="post">
     <div class="form-group">
@@ -32,7 +32,7 @@
     </div>
 
     <button type="submit" class="btn btn-primary">إضافة</button>
-    <a asp-action="Index" class="btn btn-secondary">العودة إلى القائمة</a>
+    <a asp-action="Index" class="btn btn-secondary">Back to menue</a>
 </form>
 
 @section Scripts {
