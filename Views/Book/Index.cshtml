@@ -1,0 +1,40 @@
+﻿@model IEnumerable<BookLibraryExam.Models.Book>
+
+@{
+    ViewData["Title"] = "قائمة الكتب";
+}
+
+<h1>قائمة الكتب</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">إضافة كتاب جديد</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.First().Title)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Author)</th>
+            <th>@Html.DisplayNameFor(model => model.First().ISBN)</th>
+            <th>@Html.DisplayNameFor(model => model.First().PublicationYear)</th>
+            <th>إجراءات</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.ISBN</td>
+                <td>@book.PublicationYear</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@book.Id" class="btn btn-warning btn-sm">تعديل</a>
+                    <form asp-action="Delete" asp-route-id="@book.Id" method="post" style="display:inline" onsubmit="return confirm('هل أنت متأكد من حذف الكتاب؟');">
+                        <button type="submit" class="btn btn-danger btn-sm">حذف</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
